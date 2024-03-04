@@ -1,0 +1,166 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Riot&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }  
+
+body {
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    :root {
+      scroll-behavior: smooth;
+    }
+  }
+
+
+/* Custom CSS code for the right side middle fixed navigation bar */
+  /* Variables */
+  :root {
+    --main-font-homepage: "Protest Riot", sans-serif; /*home page main font family*/
+    --main-fontsize-homepage: 11vw;
+    --main-fontweight-homepage: bold;
+    --main-fontsize-homepage1: 6vw;
+
+    --secondary-font-homepage: "Poppins", sans-serif; /*home page secondary font family*/
+    --secondary-fontsize-homepage: 2vw;
+    --secondary-fontweight-homepage: thin;
+
+    --base-font-family: "Poppins", sans-serif; /*Base font family*/
+    --base-font-size: 2.7vh;
+
+    --gradiant-color-start: rgba(45, 21, 77, 1);
+    --gradiant-color-end: rgba(108, 100, 139, 1);
+
+    --dominant-color: rgba(45, 21, 77, 1); /*Colors*/
+     
+    --dominant-lite-color:rgba(108, 100, 139, 1)  ;
+
+    --primary-color: #6BBAA7 ;
+    --secondary-color: #B6A19E ;
+    
+    --accent-color: #FBA100 ; 
+  }
+
+
+
+
+  /* gradient color starts */
+  .base-color{
+    background: linear-gradient(90deg, var(--gradiant-color-start) 0%, var(--gradiant-color-end) 50%, var(--gradiant-color-start) 100%);
+  }
+  /* gradient color ends */
+
+
+
+
+/* final */
+#circle {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  overflow: hidden;
+  /* position: absolute; */
+  animation: move 2s linear infinite;
+}
+
+@keyframes move {
+  0% {
+      left: calc(random(100) * 1%);
+      top: calc(random(80) * 1%);
+  }
+  100% {
+      left: calc(random(100) * 1%);
+      top: calc(random(100) * 1%);
+  }
+}
+
+#score {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 24px;
+}
+
+.vertical-height{
+
+  height:100vh;
+  width: 100%;
+}
+.areena{
+  height:95%;
+  margin: 8%;
+  top: 2%;
+  
+  /* left: 20%; */
+}
+
+.lft-button{
+top: 90%;
+left: 1%;
+z-index: 1;
+}
+.rht-button{
+  top: 5%;
+  /* left: 1%; */
+}  
+.base-color{
+  background-color: var(--dominant-color);
+}
+
+
+
+
+
+/* Home page custom font and animation section starts */
+
+.main-font-homepage-txt h1{
+        font-family: var(--main-font-homepage); 
+        font-size: var(--main-fontsize-homepage) !important;
+        font-weight: var(--main-fontweight-homepage) !important; 
+        position: relative;
+        color: var(--primary-color) !important;
+        text-shadow: 4px 4px 2px var(--dominant-color);
+        /* -webkit-text-stroke: 0.02vw var(--accent-color); */
+}
+h1::before{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  color: var(--primary-color) !important;
+  text-shadow: 4px 6px 2px rgba(0,0,0,0.6);
+  /* -webkit-text-stroke: 0vw #827984; */
+  
+  overflow: hidden;
+  animation: anima 8s linear infinite;
+}
+
+@keyframes anima{
+  0%,10%,100%{
+    width: 0;
+  }
+  70%,90%{
+    width: 100%;
+  }
+}
+
+
+
